@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Backbutton from "../Button/Backbutton";
 function Login() {
+  const focusref = useRef(null);
+  useEffect(() => {
+    focusref.current.focus()
+  
+    
+  }, [])
+  
   return (
     <>
       <div className="bg-black w-screen h-screen items-center flex flex-col">
@@ -28,6 +35,7 @@ function Login() {
 
           <div className="w-[90%] md:w-[85%] mb-5 mt-10">
             <input
+              ref={focusref}
               type="text"
               placeholder="Email"
               className="w-full text-sm rounded-md bg-black border-[1px] border-slate-700 h-9 pl-4 placeholder-slate-300 font-normal focus:outline-none  focus:border-red-600"
